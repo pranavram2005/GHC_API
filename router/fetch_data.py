@@ -11,6 +11,10 @@ list_cat = []
 for i in q_data:
     list_cat.append(i["category"])         
 
+@router.get("/user/{category}")
+def select(category: str):
+     ind = list_cat.index(list_cat[category])     
+     return q_data[ind]
 
 @router.get("/user/")
 def all():
